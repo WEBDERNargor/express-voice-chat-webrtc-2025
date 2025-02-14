@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Voice Chat App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
+            <h1 class="text-2xl font-bold text-center mb-6">Voice Chat App</h1>
+            
+            <div class="space-y-4">
+                <div class="text-center">
+                    <button id="joinBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                        Join Chat
+                    </button>
+                </div>
+                
+                <div id="roomControls" class="hidden space-y-4">
+                    <div class="flex justify-center space-x-2">
+                        <button id="muteBtn" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition">
+                            Mute
+                        </button>
+                        <button id="leaveBtn" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+                            Leave
+                        </button>
+                    </div>
+                </div>
+
+                <div id="status" class="text-center text-gray-600">
+                    Not connected
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
